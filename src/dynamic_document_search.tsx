@@ -361,9 +361,9 @@ const DocumentSearchSystem = () => {
   };
 
   const DocumentCard = ({ doc, isExactMatch = true, similarity = null, isRecommended = false }) => (
-    <div className={`bg-gray-800 border border-gray-700 rounded-lg p-4 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:border-blue-500/50 ${
-      isRecommended ? 'border-blue-600 bg-gray-800/80 backdrop-blur' : ''
-    }`}>
+    <div className={`bg-gray-800 border border-gray-700 rounded-lg p-4 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:border-blue-500/50 opacity-0 animate-fadeInUp ${
+    isRecommended ? 'border-blue-600 bg-gray-800/80 backdrop-blur' : ''
+  }`}>
       <div className="flex items-start justify-between">
         <div className="flex items-start space-x-3">
           <div className={`p-2 rounded-lg ${doc.type === 'DPM' ? 'bg-blue-900/50 border border-blue-700' : 'bg-green-900/50 border border-green-700'}`}>
@@ -435,8 +435,8 @@ const DocumentSearchSystem = () => {
           </div>
           
           {/* Text with typewriter effect */}
-          <h2 className="text-2xl font-bold text-white mb-2 animate-pulse">Preparing Document Search System</h2>
-          <p className="text-gray-400 animate-pulse">Loading your curated DPM content…</p>
+          <h2 className="text-2xl font-bold text-white mb-2 animate-pulse">Initializing Document Command Console</h2>
+          <p className="text-gray-400 animate-pulse">Syncing curated DPM files from GitHub…</p>
           
           {/* Progress dots */}
           <div className="flex justify-center space-x-1 mt-6">
