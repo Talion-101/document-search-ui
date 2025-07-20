@@ -12,7 +12,7 @@ const DocumentSearchSystem = () => {
   // GitHub repository configuration
   const GITHUB_CONFIG = {
     owner: 'Talion-101',
-    repo: 'DPM',
+    repo: 'document-search-ui',
     branch: 'main'
   };
 
