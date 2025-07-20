@@ -435,8 +435,8 @@ const DocumentSearchSystem = () => {
           </div>
           
           {/* Text with typewriter effect */}
-          <h2 className="text-2xl font-bold text-white mb-2 animate-pulse">Loading Documents</h2>
-          <p className="text-gray-400 animate-pulse">Fetching latest files from GitHub repository...</p>
+          <h2 className="text-2xl font-bold text-white mb-2 animate-pulse">Preparing Document Search System</h2>
+          <p className="text-gray-400 animate-pulse">Loading your curated DPM content…</p>
           
           {/* Progress dots */}
           <div className="flex justify-center space-x-1 mt-6">
