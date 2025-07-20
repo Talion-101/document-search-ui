@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://Talion-101.github.io/document-search-ui",
   "dependencies": {
+    "react-scripts": "^5.0.1"
     "lucide-react": "^0.323.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
