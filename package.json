@@ -1,0 +1,23 @@
+{
+  "name": "document-search-ui",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://Talion-101.github.io/document-search-ui",
+  "dependencies": {
+    "lucide-react": "^0.323.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "gh-pages": "^5.0.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
