@@ -23,14 +23,14 @@ jobs:
           rm -rf node_modules
           rm -f package-lock.json
 
-      - name: Install dependencies (force AJV resolution)
+      - name: Manually install critical dependencies
         run: |
+          npm install react-scripts@5.0.1 ajv@6.12.6 ajv-keywords@3.5.2 ajv-formats@2.1.1 --save
           npm install --legacy-peer-deps --force
 
-      - name: Debug AJV versions 🧪
+      - name: Verify react-scripts presence
         run: |
-          npm ls ajv || echo "AJV not found"
-          npm ls ajv-keywords || echo "AJV-Keywords not found"
+          ls node_modules/react-scripts || echo "react-scripts not found"
 
       - name: Build project
         run: |
