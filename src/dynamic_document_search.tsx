@@ -435,7 +435,7 @@ const DocumentSearchSystem = () => {
           </div>
           
           {/* Text with typewriter effect */}
-return () 
+return (
   <>
     {loading ? (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
@@ -455,7 +455,7 @@ return ()
       </div>
     )}
   </>
-);         
+);
           {/* Progress dots */}
           <div className="flex justify-center space-x-1 mt-6">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
