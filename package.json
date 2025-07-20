@@ -22,5 +22,8 @@
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "overrides": {
+    "ajv": "6.12.6"
   }
 }
