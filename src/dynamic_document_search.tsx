@@ -112,7 +112,7 @@ const DocumentSearchSystem = () => {
     try {
       // Try multiple API endpoints for better compatibility
       const endpoints = [
-        `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents?ref=${GITHUB_CONFIG.branch}`,
+        `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/docs?ref=${GITHUB_CONFIG.branch}`,
         `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/git/trees/${GITHUB_CONFIG.branch}?recursive=1`
       ];
       
@@ -148,13 +148,15 @@ const DocumentSearchSystem = () => {
         
         const treeData = await response.json();
         // Transform tree API response to match contents API format
-        contents = treeData.tree.filter(item => item.type === 'blob').map(item => ({
-          name: item.path,
-          type: 'file',
-          size: item.size,
-          download_url: `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${item.path}`,
-          html_url: `https://github.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/blob/${GITHUB_CONFIG.branch}/${item.path}`,
-          sha: item.sha
+        contents = treeData.tree
+  .filter(item => item.type === 'blob' && item.path.startsWith('docs/'))
+  .map(item => ({
+    name: item.path.replace(/^docs\//, ''),
+    type: 'file',
+    size: item.size,
+    download_url: `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${item.path}`,
+    html_url: `https://github.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/blob/${GITHUB_CONFIG.branch}/${item.path}`,
+    sha: item.sha
         }));
       }
       
