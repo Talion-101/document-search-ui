@@ -5,9 +5,60 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DPM Document Search</title>
+
+    <!-- 🌍 Load Bootstrap for layout and styling -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- 🎨 Inline custom styles -->
+    <style>
+      body {
+        background-color: #f7f9fc;
+        font-family: "Segoe UI", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      #root {
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      .splash-message {
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      .splash-message h1 {
+        color: #2979ff;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .splash-message p {
+        font-size: 1.2rem;
+        color: #555;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+
+    <!-- 👋 Pre-React message -->
+    <div class="splash-message">
+      <h1>DPM Document Search</h1>
+      <p>Loading document explorer...</p>
+    </div>
+
     <div id="root"></div>
   </body>
 </html>
