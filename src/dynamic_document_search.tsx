@@ -147,12 +147,8 @@ const DocumentSearchSystem = () => {
         }
         
         const treeData = await response.json();
-
-// 👀 Log every file path in the repository tree
-console.log('📁 All repo file paths:', treeData.tree.map(item => item.path));
-
-// 🔍 Filter for files inside the "docs/" folder
-contents = treeData.tree
+        // Transform tree API response to match contents API format
+        contents = treeData.tree
   .filter(item => item.type === 'blob' && item.path.startsWith('docs/'))
   .map(item => ({
     name: item.path.replace(/^docs\//, ''),
@@ -161,11 +157,9 @@ contents = treeData.tree
     download_url: `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${item.path}`,
     html_url: `https://github.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/blob/${GITHUB_CONFIG.branch}/${item.path}`,
     sha: item.sha
-  }));
-
-// ✅ Log which document files were picked up from "docs/"
-console.log('✅ Filtered docs folder contents:', contents.map(item => item.name));
-    
+        }));
+      }
+      
       // Filter for document files
       const documentFiles = contents.filter(item => 
         item.type === 'file' && 
