@@ -18,16 +18,16 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Clean previous install artifacts
+      - name: Clean previous install
         run: |
           rm -rf node_modules
           rm -f package-lock.json
 
-      - name: Install dependencies with forced overrides
+      - name: Install dependencies (AJV-safe)
         run: |
           npm install --legacy-peer-deps
 
-      - name: Verify ajv resolution
+      - name: Debug AJV versions 🧪
         run: |
           npm ls ajv
           npm ls ajv-keywords
