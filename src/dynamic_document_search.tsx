@@ -437,17 +437,17 @@ const DocumentSearchSystem = () => {
           {/* Text with typewriter effect */}
 if (loading) {
   return (
-    <div className="text-center">
-  <h2 className="text-2xl font-bold text-white mb-2 animate-pulse">
-    Initializing Document Command Console
-  </h2>
-  <p className="text-gray-400 animate-pulse">
-    Syncing curated DPM files from GitHub…
-  </p>
-</div>
-  );
-}
-          
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-white mb-2 animate-pulse">
+          Initializing Document Command Console
+        </h2>
+        <p className="text-gray-400 animate-pulse">
+          Syncing curated DPM files from GitHub…
+        </p>
+      </div>
+    </div>
+  );} 
           {/* Progress dots */}
           <div className="flex justify-center space-x-1 mt-6">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
