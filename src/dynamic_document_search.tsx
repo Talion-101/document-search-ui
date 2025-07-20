@@ -443,11 +443,13 @@ if (loading) {
           Initializing Document Command Console
         </h2>
         <p className="text-gray-400 animate-pulse">
-          Syncing curated DPM files from GitHub…
+          Syncing curated DPM files from GitHub...
         </p>
       </div>
     </div>
-  );} 
+  );
+} 
+          
           {/* Progress dots */}
           <div className="flex justify-center space-x-1 mt-6">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
