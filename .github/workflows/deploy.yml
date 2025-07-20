@@ -18,6 +18,11 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Clean previous install artifacts
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+
       - name: Install dependencies
         run: |
           npm install --legacy-peer-deps
